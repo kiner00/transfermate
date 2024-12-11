@@ -1,0 +1,10 @@
+CREATE TABLE authors (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE books (
+    id SERIAL PRIMARY KEY,
+    author_id INT REFERENCES authors(id) ON DELETE CASCADE,
+    title VARCHAR(255) NOT NULL
+);
